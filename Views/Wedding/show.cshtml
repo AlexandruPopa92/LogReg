@@ -1,0 +1,44 @@
+@using LogReg.Models
+@model List<Wedding>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/style2.css" />
+    <title>Wedding Planner</title>
+</head>
+<body>
+    <div class="container">
+        @foreach(var i in @Model){
+        <h2>@i.Him and @i.Her Wedding</h2>
+        <a href="/dashboard" class="btn btn-info">Dashboard</a>
+        <a href="/delete" class="btn btn-primary">Log Out</a>
+        <hr>
+        <div class="wedding_info">
+            <h4>Date: @i.Date</h4>
+            <p>Guests:</p>
+            <ul>
+            @if(@i.Attendees !=null){
+                
+            foreach (var item in @i.Attendees)
+            
+            {
+                <li>@item.User.FirstName  @item.User.LastName </li>
+            }
+            
+            }
+            </ul>
+        </div>
+        <div class="wedding_location">
+            <iframe width="600" height="600" frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?q=@i.Address&key=AIzaSyCYhjPJOrjTDgaNDORqRxOY944P11eTEew&" allowfullscreen>
+            </iframe>
+        </div>
+        }
+    </div>
+    
+</body>
+</html>

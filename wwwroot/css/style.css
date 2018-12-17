@@ -1,0 +1,21 @@
+.registration{
+    width: 45%;
+    margin:20px;
+
+}
+.login{
+    width: 45%;
+    margin:20px;
+}
+.error{
+    color: red;
+    font-size: 15px;
+}
+body{
+    background: rgb(246,246,246);
+    background: linear-gradient(180deg, rgba(246,246,246,1) 0%, rgba(244,239,239,1) 46%, rgba(163,163,163,1) 100%);
+}
+.toplink{
+    text-align: center;
+    margin: 15px;
+}
